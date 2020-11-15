@@ -39,7 +39,12 @@
             </p>
           </div>
           <div class="col-7 m-right-col">
-            <!-- date picker -->
+            <!-- date-->
+            <!-- <div class="form-group">
+              <label class="m-title" for="date">Date</label>
+              <input type="date" class="m-input" id="date">
+              
+            </div> -->
           </div>
         </div>
 
@@ -48,7 +53,6 @@
           <label class="m-title" for="name">Name</label>
           <input type="text" class="m-input" id="name">
         </div>
-
 
 
         <div class="row">
@@ -88,6 +92,13 @@
             <label class="m-title" for="designation">Designation</label>
             <input type="text" class="m-input" id="designation">
           </div>
+        </div>
+
+
+        <!--images-->
+        <div class="form-group">
+          <label class="m-title" for="images[]">Images</label>
+          <input type="file" class="m-input" id="images[]" multiple>
         </div>
 
         <!--Organization Type-->
@@ -228,15 +239,53 @@
           </div>
         </div>
                    
-             
-
 
         <button type="submit" class="btn btn-primary mt-4 w-100" style="background-color:#0060A4;">Save</button>
       </form>
 
     </div>
 
+    <!-- footer -->
+    <div class="footer"> 
+      <p>
+        Road No. 06, House No. 385, Mirpur DOHS, Dhaka-1216, Bangladesh. <br>
+        <a href="tel:+88-02-8081060" target="_blank">+88-02-8081060</a> | <a href="https://www.easytrax.com.bd/" target="_blank">www.easytrax.com.bd</a> | <a href="https://www.easytrax.com/" target="_blank">www.easytrax.com</a> | <a href="mailto:info@easytrax.com.bd">info@easytrax.com.bd</a> <br>
+        <strong>Registered Office:</strong> Ellal Chamber (3rd Floor) 11, Motijheel C/A, Dhaka-1000, Bangladesh.
+      </p>
+    </div>
+
   </div>
+
+
+
+  <!-- code for geolocation -->
+
+  <script>
+    //var x = document.getElementById("demo");
+
+
+    //default value to date
+    //document.getElementById('date').valueAsDate = new Date();
+    
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else { 
+        //x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+    
+    function showPosition(position) {
+      /* x.innerHTML = "Latitude: " + position.coords.latitude + 
+      "<br>Longitude: " + position.coords.longitude; */
+
+      console.log("Latitude: " + position.coords.latitude + 
+      "\nLongitude: " + position.coords.longitude);
+    }
+
+    getLocation();
+  </script>
+    
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
